@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গোলাপ ফুল ডিজাইন</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fce4ec;
+            font-family: Arial, sans-serif;
+        }
+
+        .rose {
+            position: relative;
+            width: 100px;
+            height: 150px;
+        }
+
+        .petal {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        .petal:nth-child(1) {
+            top: 0;
+            left: 20px;
+        }
+
+        .petal:nth-child(2) {
+            top: 10px;
+            left: -10px;
+            transform: rotate(-20deg);
+        }
+
+        .petal:nth-child(3) {
+            top: 10px;
+            left: 50px;
+            transform: rotate(20deg);
+        }
+
+        .petal:nth-child(4) {
+            top: 30px;
+            left: 10px;
+            transform: rotate(-10deg);
+        }
+
+        .stem {
+            position: absolute;
+            width: 10px;
+            height: 100px;
+            background: green;
+            left: 45px;
+            top: 80px;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background: green;
+            border-radius: 50%;
+        }
+
+        .leaf.left {
+            top: 90px;
+            left: -25px;
+            transform: rotate(-30deg);
+        }
+
+        .leaf.right {
+            top: 110px;
+            left: 45px;
+            transform: rotate(30deg);
+        }
+
+        .signature {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d81b60;
+            font-weight: bold;
+        }
+
+        /* Animation */
+        .petal {
+            animation: bloom 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes bloom {
+            0% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rose">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+    </div>
+
+    <div class="signature">Design By: Abu Hanif</div>
+
+</body>
+</html>
