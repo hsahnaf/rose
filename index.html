@@ -30,18 +30,14 @@
         /* Bloom animation */
         .petals {
             transform-origin: center;
-            animation: bloom 2s ease-in-out forwards;
+            transform: scale(0);
+            opacity: 0;
+            transition: transform 2s ease-in-out, opacity 2s ease-in-out;
         }
 
-        @keyframes bloom {
-            0% {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
+        .bloom {
+            transform: scale(1);
+            opacity: 1;
         }
 
         .signature {
@@ -50,6 +46,21 @@
             color: #d81b60;
             font-weight: bold;
         }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #b0003a;
+        }
     </style>
 </head>
 <body>
@@ -57,7 +68,7 @@
     <div class="rose-container">
         <svg class="rose" viewBox="0 0 200 300">
             <!-- ফুলের পাপড়ি -->
-            <g class="petals">
+            <g class="petals" id="rosePetals">
                 <path d="M100,40 C130,10 170,30 160,70 C155,90 130,110 100,110 C70,110 45,90 40,70 C30,30 70,10 100,40" fill="red"/>
                 <path d="M100,60 C120,50 140,70 130,90 C125,100 110,110 100,110 C90,110 75,100 70,90 C60,70 80,50 100,60" fill="darkred"/>
             </g>
@@ -71,7 +82,15 @@
         </svg>
     </div>
 
+    <button class="button" onclick="bloomRose()">ফুল ফুটাও</button>
+
     <div class="signature">Design By: Abu Hanif</div>
 
+    <script>
+        function bloomRose() {
+            document.getElementById('rosePetals').classList.add('bloom');
+        }
+    </script>
+
 </body>
-                </html>
+</html>
